@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isander Paris</title>
+  <meta name="description" content="Isander Paris, Computer Engineer from Puerto Rico. Résumé, GitHub, LinkedIn and contact.">
+  <meta property="og:title" content="Isander Paris">
+  <meta property="og:description" content="Computer Engineer · Puerto Rico">
+  <meta property="og:type" content="profile">
+  <meta name="theme-color" content="#0e0f11">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       COLORS — change --accent (and --accent-ink) to switch theme.
+       ============================================================ */
+    :root {
+      --bg: #0e0f11;
+      --card: #17191c;
+      --ink: #eeece8;
+      --muted: #9a9892;
+      --line: #26292d;
+      --accent: #e0a458;      /* option A: coffee / amber */
+      --accent-ink: #1a1206;  /* text on top of accent */
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 56px 16px 40px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main { width: 100%; max-width: 460px; }
+
+    /* ---------- Header ---------- */
+    header { text-align: center; margin-bottom: 8px; }
+
+    .avatar {
+      width: 104px; height: 104px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      display: grid; place-items: center;
+      font-family: "Fraunces", serif;
+      font-size: 38px; font-weight: 650;
+      overflow: hidden;
+      border: 3px solid var(--card);
+      box-shadow: var(--shadow);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    h1 {
+      font-family: "Fraunces", serif;
+      font-weight: 650;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .role { font-weight: 500; color: var(--accent); margin-top: 6px; }
+
+    .meta {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 6px 16px;
+      color: var(--muted); font-size: 14px; margin-top: 8px;
+    }
+    .meta span, .meta a { display: inline-flex; align-items: center; gap: 6px; }
+    .meta a { color: var(--muted); text-decoration: none; }
+    .meta a:hover { color: var(--accent); }
+    .meta svg { width: 14px; height: 14px; flex: none; }
+
+    .bio {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 16px auto 0;
+      max-width: 36ch;
+    }
+    .bio em { color: var(--ink); font-style: normal; }
+
+    /* ---------- Links ---------- */
+    .section-label {
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--muted);
+      margin: 28px 4px 10px;
+    }
+
+    .links { list-style: none; display: grid; gap: 10px; }
+
+    .links a {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .links a:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .icon {
+      flex: none;
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: grid; place-items: center;
+      background: color-mix(in srgb, var(--accent) 14%, transparent);
+      color: var(--accent);
+    }
+    .icon svg { width: 20px; height: 20px; }
+
+    .text { flex: 1; min-width: 0; }
+    .text strong { display: block; font-weight: 600; font-size: 15px; }
+    .text span {
+      display: block; font-size: 13px; color: var(--muted);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .arrow { color: var(--muted); flex: none; }
+    .arrow svg { width: 16px; height: 16px; }
+
+    .featured a { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .featured .icon { background: rgba(0,0,0,.14); color: var(--accent-ink); }
+    .featured .text span, .featured .arrow { color: var(--accent-ink); opacity: .75; }
+
+    /* ---------- Skills ---------- */
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .skills li {
+      font-size: 13px; font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    /* ---------- Footer ---------- */
+    footer { text-align: center; margin-top: 44px; }
+    footer q {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--ink);
+    }
+    footer q::before, footer q::after { color: var(--accent); }
+    footer small { display: block; color: var(--muted); font-size: 12px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <!-- To use a photo, add photo.jpg to the repo and replace "IP" with:
+           <img src="photo.jpg" alt="Isander Paris"> -->
+      <div class="avatar">IP</div>
+
+      <h1>Isander Paris</h1>
+      <p class="role">Computer Engineer</p>
+      <div class="meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Puerto Rico
+        </span>
+        <a href="mailto:isander.paris@upr.edu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          isander.paris@upr.edu
+        </a>
+      </div>
+      <p class="bio">
+        Contributing by solving one problem at a time.
+        Random fact about me: <em>I love coffee.</em> ☕
+      </p>
+    </header>
+
+    <p class="section-label">Links</p>
+    <ul class="links">
+      <!-- Put resume.pdf in the repo next to this file, or link to Google Drive. -->
+      <li class="featured">
+        <a href="resume.pdf" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
+          <span class="text"><strong>Résumé</strong><span>Download PDF</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/IsanderParis" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+          <span class="text"><strong>GitHub</strong><span>github.com/YOUR-USERNAME</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/isander-paris-63b65b23a/" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+          <span class="text"><strong>LinkedIn</strong><span>linkedin.com/in/YOUR-PROFILE</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="section-label">Skills</p>
+    <ul class="skills">
+      <li>C++</li>
+      <li>Python</li>
+      <li>Java</li>
+      <li>PyTorch</li>
+      <li>Flutter</li>
+      <li>MySQL</li>
+      <li>Git</li>
+      <li>SharePoint (SPFx)</li>
+      <li>Power BI</li>
+      <li>Dynamics</li>
+      <li>Xilinx Vivado</li>
+      <li>RESTful APIs</li>
+      <li>Agile</li>
+      <li>Leadership</li>
+    </ul>
+
+    <footer>
+      <q>How big would you dream?</q>
+      <small>© <span id="year"></span> Isander Paris</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
